@@ -182,7 +182,7 @@ def index(requeset):
     context = {
         'articles' : articles
     }
-	return render(request,'articles/index.html, context')
+	return render(request,'articles/index.html', context)
 ```
 
 ```html
@@ -448,3 +448,4 @@ def delete(request,pk):
 
 
 
+<img src="{% url 'movie.poster_url' %}" alt="poster">
