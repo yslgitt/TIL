@@ -117,6 +117,8 @@ Article.objects.all()
 # 매개변수와 일치하는 객체 반환 (하나만 반환 가능! 둘 이상이면 안됨.)
 Article.objects.get(pk=1) #예시
 Article.objects.get(content='django!') #예시
+# 객체 없으면 DoesNotExist
+# 둘 이상이면 MultipleObjectsReturned
 
 # 매개변수와 일치하는 객체를 포함한 새 QuerySet 반환 (둘 이상 가능)
 Article.objects.filter(content='django!') #예시
@@ -140,6 +142,7 @@ article.save()
 ```shell
 article = Article.objects.get(pk=1)
 article.delete()
+#삭제된 객체수와 객체 유형당 삭제수가 포함된 딕셔너리 반환
 ```
 
 
