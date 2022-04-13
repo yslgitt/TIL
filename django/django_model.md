@@ -175,7 +175,7 @@ def index(request):
 
 -------
 
-- CREATE
+- **READ(index)**
 
   ```python
   # 앱 폴더 > views.py
@@ -212,7 +212,7 @@ def index(request):
   {% endblock content %}
   ```
 
-  
+- **CREATE**
 
 
 
