@@ -79,14 +79,14 @@ from .models import Article
 from rest_framework import serializers
 
 class ArticleListSerializer(serializers.ModelSerializer):
-	# 모든 게시글 정보 반환
+
     class Meta:
         model = Article
         fields = ('id','title',)
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-	# 게시글의 상세 정보를 반환, 생성 
+ 
     class Meta:
         model = Article
         fields = '__all__'
@@ -204,7 +204,7 @@ def article_list(request):
 
 ```python
 # articles/views.py
-@api_view(['GET','POST'])
+@api_view(['GET','DELETE'])
 def article_detail(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
 
