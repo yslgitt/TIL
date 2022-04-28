@@ -119,19 +119,44 @@
   }
   ```
 
-  
+- for - 세미콜론(;)으로 구분되는 세 부분으로 구성 > initialization, condition, expression
 
-- for
+  ```javascript
+  for (let i = 0; i < 6; i++) {
+  	console.log(i)
+  }
+  ```
 
 - for ... in
 
-  - 객체의 속성들을 순회할 때 사용
+  - 객체의 속성들을 순회할 때 사용 (객체 - key, value로 이루어진 자료구조)
   - 배열도 순회 가능하지만 인덱스 순으로 순회한다는 보장이 없어 권장하지 않음
+
+  ```javascript
+  const capitals = {
+      korea : 'seoul',
+      france : 'paris',
+      USA : 'washington D.C'
+  }
+  for (let capital in capitas){
+      console.log(capital) // korea, frace, USA
+  }
+  ```
+
+  
 
 - for ... of
 
   - 반복 가능한 객체를 순회하며 값을 꺼낼 때 사용
     - 반복 가능한 객체의 종류: Array, Map, Set, String 등
+
+  ```javascript
+  const fruits = ['딸기', '바나나', '메론']
+  for (let fruit of fruits) {
+      fruit = fruit + '!'
+      console.log(fruit)
+  }
+  ```
 
   
 
