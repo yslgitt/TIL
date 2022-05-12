@@ -1,3 +1,55 @@
+### vue.js
+
+- 사용자 인터페이스를 만들기 위한 진보적인 자바스크립트 프레임워크
+
+- 현대적인 tool과 다양한 라이브러리를 통해 SPA를 완벽하게 지원
+
+  - SPA(Single Page Appliction) : 단일 페이지 애플리케이션
+
+    현재 페이지를 동적으로 렌더링함으로 사용자와 소통하는 웹 애플리케이션
+
+    단일 페이지로 구성되며 서버로부터 최초에만 페이지를 다운로드, 이후 동적으로 DOM 구성
+
+    동작 원리 일부가 CSR의 구조를 따름
+
+    - CSR(Client Side Rendering)  ( ↔ SSR )
+
+      서버에서 화면을 구성하는 SSR 방식과 달리 클라이언트에서 화면을 구성
+
+      최초 요청 시 HTML, CSS, JS 등 데이터를 제외한 각종 리소스를 응답받고 이후 클라이언트에서는 필요한 데이터만 요청해 JS로 DOM을 렌더링하는 방식
+
+      *SEO에 어려움이 있음*
+
+
+
+- **MVVM**
+  - Model : data (Object === {key: value})
+  - View : DOM(HTML), data의 변화에 따라 바뀌는 대상
+  - ViewModel : Vue Instance
+
+
+
+------
+
+- CDN
+
+  `<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>`
+
+- BASIC
+
+  ``` html
+  const app = new Vue({
+  	el: '#app'
+  	data: {
+  		message: 'Hello',	
+  	}
+  })
+  ```
+
+  
+
+
+
 ## Template Syntax
 
 ### Directive 
