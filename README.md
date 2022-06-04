@@ -1,4 +1,2 @@
-# TIL 
-
-today I learnd
+# 🧩 Today I Learned
 
