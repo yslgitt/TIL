@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+</body>
+<!-- react js import -->
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<!-- react dom import -->
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<!-- babel : 코드 변환 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+  function Title() { return (<h3 id="title" onMouseEnter={()=> console.log("mouse enter")}>hello</h3>); }
+
+  // const h3 = React.createElement("h3", {
+  //   onMouseEnter: () => console.log('mouse enter!'),
+  //   id: "sexy", style: {color: "red"}}, "hello");
+
+
+  // 위 아래 같음 function 어쩌고랑  = () => ( 이부분
+
+  const Button = () => (
+    <button style={{
+      backgroundColor:"tomato",
+    }} 
+    onClick={()=>console.log("click")}
+    >
+    Click me
+    </button>);
+  // const btn = React.createElement("button", {
+  //   onClick: () => console.log('click!'),
+  //   style: {backgroundColor: "tomato"}
+  // }, "Click Me");  
+
+  // **첫글자: 대문자, (소문자면 html 태그인줄 앎)**
+  const Container = () => ( <div> <Title /> <Button /> <Button /> </div> )
+  // const container = React.createElement("div", null, [Title, Button]);
+  ReactDOM.render(<Container />, root)
+
+  // 어썸 문법~
+  const food = ["tomato", "potato"]
+  const [first, second] = food;
+
+</script>
+</html>

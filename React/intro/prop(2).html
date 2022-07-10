@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+</body>
+<!-- react js import -->
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<!-- react dom import -->
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<!-- babel : 코드 변환 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+
+  // function Btn(props){
+  // function Btn({ text, big }){
+  function Btn({ text, onClick }){
+    return <button 
+    onClick={onClick}
+    style={{  
+      backgroundColor: "tomato",
+      color: "white",
+      padding: "10px 20px",
+      border: 0,
+      borderRadius: 10,
+      // fontSize: big? 18 : 10
+    // }}>{props.banana}</button>;
+    }} >{text}</button>;
+  }
+
+  const MemorizeBtn = React.memo(Btn)
+  function App(){
+    const [value, setValue] = React.useState("Save Changes");
+    const changeValue = () => setValue("Revert Changes")
+    return (
+      // <Btn text={value} big={true} changeValue={changeValue} /> 
+      // onClick 이벤트가 아님. props
+      <div>
+        <MemorizeBtn text={value} onClick={changeValue} /> 
+        <MemorizeBtn text="Continue" />
+      </div> 
+    );
+  }
+  const root = document.getElementById("root");
+  ReactDOM.render(<App />, root);
+
+  
+
+</script>
+</html>

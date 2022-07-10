@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="root"></div>
+</body>
+<!-- react js import -->
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<!-- react dom import -->
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<!-- babel : 코드 변환 -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const root = document.getElementById("root");
+
+  // let counter = 0;
+  // function countUp(){
+  //   counter += 1;
+  //   render();
+  // }
+  // function render(){
+  //   ReactDOM.render(<App />, root);
+  // }
+
+  // function App(){
+  //   return (
+  //     <div>
+  //     <h3>Total clicks: {counter}</h3>
+  //     <button onClick={countUp}>Click me</button>       
+  //     </div> 
+
+  //   );
+  // }
+
+  function App(){
+    const [counter, setCounter] = React.useState(0); //배열의 첫째: 초깃값, 둘째: 함수
+    const onClick = () => {
+      // setCounter(counter + 1);
+      setCounter((current) => current + 1);
+    };
+    return (
+      <div>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={onClick}>Click me</button>       
+      </div> 
+    );
+  }
+  ReactDOM.render(<App />, root);
+  // render();
+
+  
+
+</script>
+</html>
